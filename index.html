@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tangliketiktok.io.vn - Dịch vụ SMM TikTok, Instagram, Facebook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff2d55;
+            --secondary: #00c2ff;
+            --tiktok: #000000;
+            --instagram: #E1306C;
+            --facebook: #3b5998;
+            --youtube: #FF0000;
+            --twitter: #1DA1F2;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #f8f9fa;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-tiktok: linear-gradient(135deg, #000000, #00c2ff);
+            --gradient-instagram: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            --gradient-facebook: linear-gradient(135deg, #3b5998, #00c2ff);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--darker);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .navbar {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.95)), url('https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1540&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0 100px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #ccc;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-gradient {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 45, 85, 0.4);
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 45, 85, 0.5);
+            color: white;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            color: #aaa;
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .social-platforms {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+        
+        .platform-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .platform-btn.active, .platform-btn:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .service-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .service-platform {
+            font-size: 0.85rem;
+            color: #aaa;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3px 10px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+        
+        .service-description {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .service-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 15px;
+        }
+        
+        .service-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            width: 100%;
+            margin-top: 15px;
+        }
+        
+        .service-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 45, 85, 0.4);
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 50px 0;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            background: linear-gradient(to bottom, #0a0a0a, #050505);
+            color: white;
+            padding: 70px 0 30px;
+            margin-top: 100px;
+        }
+        
+        .footer-links h5 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            text-align: center;
+            color: #888;
+        }
+        
+        /* Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-platforms {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .platform-btn {
+                width: 200px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-rocket me-2"></i>tangliketiktok.io.vn
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Dịch vụ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Bảng giá</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">Cách thức</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-3 mt-lg-0">
+                        <a class="btn btn-gradient" href="#order">Đặt hàng ngay</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Dịch vụ SMM TikTok, Instagram, Facebook</h1>
+            <p class="hero-subtitle">Cung cấp đầy đủ các dịch vụ Social Media Marketing chất lượng cao, giao tự động ngay sau khi thanh toán</p>
+            <a href="#services" class="btn btn-gradient btn-lg pulse">Khám phá dịch vụ <i class="fas fa-arrow-right ms-2"></i></a>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <i class="fas fa-users fa-2x"></i>
+                    <div class="stat-value">5,000+</div>
+                    <div class="stat-label">Khách hàng hài lòng</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-bolt fa-2x"></i>
+                    <div class="stat-value">150,000+</div>
+                    <div class="stat-label">Đơn hàng đã xử lý</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-headset fa-2x"></i>
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Hỗ trợ khách hàng</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-percent fa-2x"></i>
+                    <div class="stat-value">99.5%</div>
+                    <div class="stat-label">Tỷ lệ thành công</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container py-5">
+            <h2 class="section-title">Dịch vụ của chúng tôi</h2>
+            <p class="section-subtitle">Cung cấp đầy đủ các dịch vụ Social Media Marketing từ nhà cung cấp SMM hàng đầu</p>
+            
+            <div class="social-platforms">
+                <button class="platform-btn active" data-platform="all">Tất cả</button>
+                <button class="platform-btn" data-platform="tiktok">TikTok</button>
+                <button class="platform-btn" data-platform="instagram">Instagram</button>
+                <button class="platform-btn" data-platform="facebook">Facebook</button>
+                <button class="platform-btn" data-platform="youtube">YouTube</button>
+                <button class="platform-btn" data-platform="twitter">Twitter</button>
+            </div>
+            
+            <div class="services-container">
+                <!-- TikTok Services -->
+                <div class="service-card" data-platform="tiktok">
+                    <div class="service-header">
+                        <div>
+                            <div class="service-name">Tăng Follow TikTok</div>
+                            <span class="service-platform">TikTok</span>
+                        </div>
+                        <i class="fab fa-tiktok fa-2x" style="color: var(--tiktok);"></i>
+                    </div>
+                    <div class="service-price">99.000đ <span>/ 1000 follow</span></div>
+                    <div class="service-description">
+                        Tăng follow TikTok chất lượng cao, an toàn. Tốc độ tăng tự nhiên, bền vững.
+                    </div>
+                    <div class="service-meta">
+                        <span><i class="fas fa-bolt"></i> Bắt đầu sau: 5 phút</span>
+                        <span><i class="fas fa-clock"></i> Tốc độ: 100-200/ngày</span>
+                    </div>
+                    <button class="service-btn">Đặt ngay</button>
+                </div>
+                
+                <div class="service-card" data-platform="tiktok">
+                    <div class="service-header">
+                        <div>
+                            <div class="service-name">Tăng Like TikTok</div>
+                            <span class="service-platform">TikTok</span>
+                        </div>
+                        <i class="fab fa-tiktok fa-2x" style="color: var(--tiktok);"></i>
+                    </div>
+                    <div class="service-price">79.000đ <span>/ 1000 like</span></div>
+                    <div class="service-description">
+                        Tăng like video TikTok chất lượng cao, like từ tài khoản thật.
+                    </div>
+                    <div class="service-meta">
+                        <span><i class="fas fa-bolt"></i> Bắt đầu sau: 5 phút</span>
+                        <span><i class="fas fa-clock"></i> Tốc độ: 200-500/ngày</span>
+                    </div>
+                    <button class="service-btn">Đặt ngay</button>
+                </div>
+                
+                <div class="service-card" data-platform="tiktok">
+                    <div class="service-header">
+                        <div>
+                            <div class="service-name">Tăng View TikTok</div>
+                            <span class="service-platform">TikTok</span>
+                        </div>
+                        <i class="fab fa-tiktok fa-2x" style="color: var(--tiktok);"></i>
+                    </div>
+                    <div class="service-price">49.000đ <span>/ 10000 view</span></div>
+                    <div class="service-description">
+                        Tăng view video TikTok chất lượng cao, view thật từ người dùng.
+                    </div>
+                    <div class="service-meta">
+                        <span><i class="fas fa-bolt"></i> Bắt đầu sau: 5 phút</span>
+                        <span><i class="fas fa-clock"></i> Tốc độ: 1000-2000/giờ</span>
+                    </div>
+                    <button class="service-btn">Đặt ngay</button>
+                </div>
+                
+                <!-- Instagram Services -->
+                <div class="service-card" data-platform="instagram">
+                    <div class="service-header">
+                        <div>
+                            <div class="service-name">Tăng Follow Instagram</div>
+                            <span class="service-platform">Instagram</span>
+                        </div>
+                        <i class="fab fa-instagram fa-2x" style="color: var(--instagram);"></i>
+                    </div>
+                    <div class="service-price">129.000đ <span>/ 1000 follow</span></div>
+                    <div class="service-description">
+                        Tăng follow Instagram chất lượng cao, an toàn. Follow từ tài khoản thật.
+                    </div>
+                    <div class="service-meta">
+                        <span><i class="fas fa-bolt"></i> Bắt đầu sau: 10 phút</span>
+                        <span><i class="fas fa-clock"></i> Tốc độ: 100-200/ngày</span>
+                    </div>
+                    <button class="service-btn">Đặt ngay</button>
+                </div>
+                
+                <div class="service-card" data-platform="instagram">
+                    <div class="service-header">
+                        <div>
+                            <div class="service-name">Tăng Like Instagram</div>
+                            <span class="service-platform">Instagram</span>
+                        </div>
+                        <i class="fab fa-instagram fa-2x" style="color: var(--instagram);"></i>
+                    </div>
+                    <div class="service-price">89.000đ <span>/ 1000 like</span></div>
+                    <div class="service-description">
+                        Tăng like bài viết Instagram chất lượng cao, like từ tài khoản thật.
+                    </div>
+                    <div class="service-meta">
+                        <span><i class="fas fa-bolt"></i> Bắt đầu sau: 5 phút</span>
+                        <span><i class="fas fa-clock"></i> Tốc độ: 200-500/ngày</span>
+                    </div>
+                    <button class="service-btn">Đặt ngay</button>
+                </div>
+                
+                <div class="service-card" data-platform="instagram">
+                    <div class="service-header">
+                        <div>
+                            <div class="service-name">Tăng Comment Instagram</div>
+                            <span class="service-platform">Instagram</span>
+                        </div>
+                        <i class="fab fa-instagram fa-2x" style="color: var(--instagram);"></i>
+                    </div>
+                    <div class="service-price">199.000đ <span>/ 100 comment</span></div>
+                    <div class="service-description">
+                        Tăng comment Instagram chất lượng, comment có ý nghĩa từ người dùng thật.
+                    </div>
+                    <div class="service-meta">
+                        <span><i class="fas fa-bolt"></i> Bắt đầu sau: 15 phút</span>
+                        <span><i class="fas fa-clock"></i> Tốc độ: 10-20/giờ</span>
+                    </div>
+                    <button class="service-btn">Đặt ngay</button>
+                </div>
+                
+                <!-- Facebook Services -->
+                <div class="service-card" data-platform="facebook">
+                    <div class="service-header">
+                        <div>
+                            <div class="service-name">Tăng Like Fanpage</div>
+                            <span class="service-platform">Facebook</span>
+                        </div>
+                        <i class="fab fa-facebook fa-2x" style="color: var(--facebook);"></i>
+                    </div>
+                    <div class="service-price">159.000đ <span>/ 1000 like</span></div>
+                    <div class="service-description">
+                        Tăng like Fanpage Facebook chất lượng cao, like từ tài khoản thật.
+                    </div>
+                    <div class="service-meta">
+                        <span><i class="fas fa-bolt"></i> Bắt đầu sau: 10 phút</span>
+                        <span><i class="fas fa-clock"></i> Tốc độ: 100-200/ngày</span>
+                    </div>
+                    <button class="service-btn">Đặt ngay</button>
+                </div>
+                
+                <div class="service-card" data-platform="facebook">
+                    <div class="service-header">
+                        <div>
+                            <div class="service-name">Tăng Share Facebook</div>
+                            <span class="service-platform">Facebook</span>
+                        </div>
+                        <i class="fab fa-facebook fa-2x" style="color: var(--facebook);"></i>
+                    </div>
+                    <div class="service-price">219.000đ <span>/ 100 share</span></div>
+                    <div class="service-description">
+                        Tăng share bài viết Facebook chất lượng, share từ tài khoản thật.
+                    </div>
+                    <div class="service-meta">
+                        <span><i class="fas fa-bolt"></i> Bắt đầu sau: 15 phút</span>
+                        <span><i class="fas fa-clock"></i> Tốc độ: 10-20/giờ</span>
+                    </div>
+                    <button class="service-btn">Đặt ngay</button>
+                </div>
+                
+                <div class="service-card" data-platform="facebook">
+                    <div class="service-header">
+                        <div>
+                            <div class="service-name">Tăng Comment Facebook</div>
+                            <span class="service-platform">Facebook</span>
+                        </div>
+                        <i class="fab fa-facebook fa-2x" style="color: var(--facebook);"></i>
+                    </div>
+                    <div class="service-price">179.000đ <span>/ 100 comment</span></div>
+                    <div class="service-description">
+                        Tăng comment Facebook chất lượng, comment có ý nghĩa từ người dùng thật.
+                    </div>
+                    <div class="service-meta">
+                        <span><i class="fas fa-bolt"></i> Bắt đầu sau: 15 phút</span>
+                        <span><i class="fas fa-clock"></i> Tốc độ: 10-20/giờ</span>
+                    </div>
+                    <button class="service-btn">Đặt ngay</button>
+                </div>
+                
+                <!-- YouTube Services -->
+                <div class="service-card" data-platform="youtube">
+                    <div class="service-header">
+                        <div>
+                            <div class="service-name">Tăng Subscriber</div>
+                            <span class="service-platform">YouTube</span>
+                        </div>
+                        <i class="fab fa-youtube fa-2x" style="color: var(--youtube);"></i>
+                    </div>
+                    <div class="service-price">299.000đ <span>/ 100 subscriber</span></div>
+                    <div class="service-description">
+                        Tăng subscriber YouTube chất lượng cao, sub từ tài khoản thật.
+                    </div>
+                    <div class="service-meta">
+                        <span><i class="fas fa-bolt"></i> Bắt đầu sau: 24 giờ</span>
+                        <span><i class="fas fa-clock"></i> Tốc độ: 5-10/ngày</span>
+                    </div>
+                    <button class="service-btn">Đặt ngay</button>
+                </div>
+                
+                <div class="service-card" data-platform="youtube">
+                    <div class="service-header">
+                        <div>
+                            <div class="service-name">Tăng Like YouTube</div>
+                            <span class="service-platform">YouTube</span>
+                        </div>
+                        <i class="fab fa-youtube fa-2x" style="color: var(--youtube);"></i>
+                    </div>
+                    <div class="service-price">89.000đ <span>/ 1000 like</span></div>
+                    <div class="service-description">
+                        Tăng like video YouTube chất lượng cao, like từ tài khoản thật.
+                    </div>
+                    <div class="service-meta">
+                        <span><i class="fas fa-bolt"></i> Bắt đầu sau: 5 phút</span>
+                        <span><i class="fas fa-clock"></i> Tốc độ: 100-200/giờ</span>
+                    </div>
+                    <button class="service-btn">Đặt ngay</button>
+                </div>
+                
+                <div class="service-card" data-platform="youtube">
+                    <div class="service-header">
+                        <div>
+                            <div class="service-name">Tăng View YouTube</div>
+                            <span class="service-platform">YouTube</span>
+                        </div>
+                        <i class="fab fa-youtube fa-2x" style="color: var(--youtube);"></i>
+                    </div>
+                    <div class="service-price">69.000đ <span>/ 10000 view</span></div>
+                    <div class="service-description">
+                        Tăng view video YouTube chất lượng cao, view từ người dùng thật.
+                    </div>
+                    <div class="service-meta">
+                        <span><i class="fas fa-bolt"></i> Bắt đầu sau: 5 phút</span>
+                        <span><i class="fas fa-clock"></i> Tốc độ: 1000-2000/giờ</span>
+                    </div>
+                    <button class="service-btn">Đặt ngay</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-5 bg-dark">
+        <div class="container py-5">
+            <h2 class="section-title">Cách thức hoạt động</h2>
+            <p class="section-subtitle">Chỉ với 4 bước đơn giản để sử dụng dịch vụ của chúng tôi</p>
+            
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="text-center">
+                        <div class="step-number">1</div>
+                        <h5>Chọn dịch vụ</h5>
+                        <p>Lựa chọn dịch vụ phù hợp với nhu cầu của bạn</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="text-center">
+                        <div class="step-number">2</div>
+                        <h5>Thanh toán</h5>
+                        <p>Thực hiện thanh toán qua cổng thanh toán an toàn</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="text-center">
+                        <div class="step-number">3</div>
+                        <h5>Xử lý tự động</h5>
+                        <p>Hệ thống tự động gửi yêu cầu đến nhà cung cấp SMM</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="text-center">
+                        <div class="step-number">4</div>
+                        <h5>Nhận kết quả</h5>
+                        <p>Theo dõi tiến trình và nhận kết quả tự động</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5">
+                    <h3 class="navbar-brand mb-3">tangliketiktok.io.vn</h3>
+                    <p>Dịch vụ SMM TikTok, Instagram, Facebook, YouTube chất lượng cao với giá cả cạnh tranh nhất thị trường.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-5">
+                    <div class="footer-links">
+                        <h5>Liên kết</h5>
+                        <ul>
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#services">Dịch vụ</a></li>
+                            <li><a href="#pricing">Bảng giá</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-5">
+                    <div class="footer-links">
+                        <h5>Dịch vụ</h5>
+                        <ul>
+                            <li><a href="#">Tăng Follow TikTok</a></li>
+                            <li><a href="#">Tăng Like Instagram</a></li>
+                            <li><a href="#">Tăng Sub YouTube</a></li>
+                            <li><a href="#">Tăng Like Fanpage</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-5">
+                    <div class="footer-links">
+                        <h5>Liên hệ</h5>
+                        <ul>
+                            <li><i class="fas fa-envelope me-2"></i> support@tangliketiktok.io.vn</li>
+                            <li><i class="fas fa-phone me-2"></i> +84 123 456 789</li>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Hà Nội, Việt Nam</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p class="mb-0">&copy; 2023 tangliketiktok.io.vn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Lọc dịch vụ theo nền tảng
+        document.querySelectorAll('.platform-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Xóa active class từ tất cả các nút
+                document.querySelectorAll('.platform-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Thêm active class cho nút được click
+                this.classList.add('active');
+                
+                const platform = this.getAttribute('data-platform');
+                
+                // Hiển thị tất cả dịch vụ nếu chọn "Tất cả"
+                if (platform === 'all') {
+                    document.querySelectorAll('.service-card').forEach(card => {
+                        card.style.display = 'block';
+                    });
+                } else {
+                    // Ẩn tất cả dịch vụ
+                    document.querySelectorAll('.service-card').forEach(card => {
+                        card.style.display = 'none';
+                    });
+                    
+                    // Hiển thị dịch vụ của nền tảng được chọn
+                    document.querySelectorAll(`.service-card[data-platform="${platform}"]`).forEach(card => {
+                        card.style.display = 'block';
+                    });
+                }
+            });
+        });
+        
+        // Xử lý nút đặt dịch vụ
+        document.querySelectorAll('.service-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const serviceCard = this.closest('.service-card');
+                const serviceName = serviceCard.querySelector('.service-name').textContent;
+                const servicePrice = serviceCard.querySelector('.service-price').textContent;
+                
+                alert(`Bạn đã chọn dịch vụ: ${serviceName}\nGiá: ${servicePrice}\nBạn sẽ được chuyển đến trang đặt hàng.`);
+                
+                // Cuộn đến phần đặt hàng
+                document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
